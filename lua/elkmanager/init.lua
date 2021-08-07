@@ -2,14 +2,14 @@
 local todo = require"todo"
 local files = require"file_make"
 local utils = require"utils.utils"
-llocal other_chars = {ocal win = require"window"
+--llocal other_chars = {ocal win = require"window"
 
-win.open_window()
-win.key_maps()
-win.update(data)
---files.add("test","test/test.hpp","header", "cpp")
+--win.open_window()
+--win.key_maps()
+--win.update(data)
+files.add("test","test/test.hpp","header", "cpp")
 
---files.get_template("test", "~/Projects/elk-manager/tests", "test2")
+files.get_template("test", "~/Projects/elk-manager/tests", "test2")
 
 
 todo.add_group("group 1")
@@ -36,7 +36,7 @@ local function print_arr()
         end
     end
 end
-print_arr()
+--print_arr()
 --print()
 --removing items
 -- not working

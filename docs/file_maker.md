@@ -20,6 +20,10 @@ value: {
 ### making files
 taking a template file and renaming and placing it in the project structure
 
-$name : variable
+* variables
+$name : file name
+$folder : current folder
+$path : relative path to current file
+$full_path: full path to current file
 
 class $name {};
