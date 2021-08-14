@@ -46,7 +46,6 @@ function M.open_window(settings)
   local win_width = math.ceil(options.w_width / 100 * (width * 0.8))
   local row = math.ceil((height - win_height) * (options.w_row / 100) - 1)
   local col = math.ceil((width - win_width) * (options.w_col / 100))
-  print(win_height,win_width,row,col)
 
   local border_opts = {
     style = "minimal",

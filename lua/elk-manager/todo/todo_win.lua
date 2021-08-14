@@ -2,23 +2,27 @@
 
 local todo = require"elk-manager.todo.todo"
 local win = require"elk-manager.window"
+local add = require"elk-manager.todo.todo_add"
+local gadd = require"elk-manager.todo.group_add"
 local num = 1
 local states = 0
 local todos = {}
 local out_groups = {}
-local cur_group
 local t_win
 elements = 0
 
 local M = {}
-local path = "elk-manager.todo.todo_win"
+local path = '"elk-manager.todo.todo_win"'
+local cur_group = ""
 todo_maps = {
- ['<Up>'] =   '"'..path..'".add_to_num(-1)',
- ['<Down>'] = '"'..path..'".add_to_num(1)',
- ['<cr>'] =   '"'..path..'".update()',
- ['q'] =      '"'..path..'".close()', 
- ['g'] =      '"'..path..'".change_state(0)', -- go to groups 
- ['d'] =      '"'..path..'".toggle_todo()'
+   ['<Up>'] =   path..'.add_to_num(-1)',
+   ['<Down>'] = path..'.add_to_num(1)',
+   ['<cr>'] =   path..'.update()',
+   ['q'] =      path..'.close()', 
+   ['g'] =      path..'.change_state(0)', -- go to groups 
+   ['d'] =      path..'.toggle_todo()',
+   ['at'] =     path..'.add_todo()',
+   ['ag'] =     path..'.add_group()'
 }
 
 local function print_todos(val)
@@ -40,6 +44,15 @@ local function groups()
     table.insert(out,key)
   end
   return out
+end
+
+function M.add_group()
+  gadd.init(t_win.win)
+end
+
+function M.add_todo()
+  print(cur_group)
+  add.init(cur_group,t_win.buf,t_win.win)
 end
 
 function M.close()
