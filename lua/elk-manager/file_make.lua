@@ -1,6 +1,6 @@
-local utils = require"utils.utils"
-local json = require"utils.json"
-local jio = require"json_io"
+local utils = require"elk-manager.utils.utils"
+local json = require"elk-manager.utils.json"
+local jio = require"elk-manager.json_io"
 
 local M = {}
 
