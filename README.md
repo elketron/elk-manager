@@ -10,7 +10,7 @@ a project manager for nvim
 ## functions
 
 | function name | description |
--------------------------------
+|---------------|----------------|
 | `todos`    | show todos and groups |
 | `todo_add` | add todo and groups   |
 
